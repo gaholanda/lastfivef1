@@ -1,3 +1,11 @@
+import { Header, Races, Standings } from "./components";
+
 export function App() {
-  return <h1>Hello!</h1>;
+  return (
+    <>
+      <Header />
+      <Races />
+      <Standings />
+    </>
+  );
 }
