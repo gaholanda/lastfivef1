@@ -1,11 +1,12 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
+import { Driver } from "../models/driver";
 
 const api = axios.create({
-  baseURL: "http://gaholanda.github.io/lasfivef1/",
+  baseURL: "https://gaholanda.github.io/lastfivef1/",
 });
 
 export const GetDrivers = async () => {
-  const { data } = await api.get("/drivers.json");
+  const { data } = await api.get("/drivers.json") as AxiosResponse<Driver[]>;
   return data;
 };
 
