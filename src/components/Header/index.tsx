@@ -1,3 +1,3 @@
 export function Header() {
-  return <head>Last Five F1</head>;
+  return <header>Last Five F1</header>;
 }
