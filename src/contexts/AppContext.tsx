@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
-import { useDrivers } from "../hooks/useDrivers";
+import { useRequest } from "../hooks/useRequest";
 import { Driver } from "../models/driver";
 
 interface AppProviderProps {
@@ -13,15 +13,7 @@ interface AppContextData {
 export const AppContext = createContext({} as AppContextData);
 
 export function AppProvider({ children }: AppProviderProps) {
-  const [drivers, setDrivers] = useState<Driver[]>();
-
-  useEffect(() => {
-    const loadDrivers = async () => {
-      const drivers = await useDrivers();
-      setDrivers(drivers);
-    }
-    loadDrivers();
-  }, [])
+  const { data: drivers } = useRequest<Driver[]>('drivers.json');
 
   return (
     <AppContext.Provider
