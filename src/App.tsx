@@ -3,11 +3,11 @@ import { Header, Races, Standings } from "./components";
 import { AppContext } from "./contexts/AppContext";
 
 export function App() {
-  const { drivers } = useContext(AppContext);
+  const context = useContext(AppContext);
 
   useEffect(() => {
-    console.log(drivers);
-  }, [drivers])
+    console.log(context);
+  }, [context])
 
   return (
     <>
