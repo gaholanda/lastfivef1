@@ -1,6 +1,6 @@
 export interface Driver {
   name: string;
-  team: string;
+  team_id: string;
   number: number;
 }
 
