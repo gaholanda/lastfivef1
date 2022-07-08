@@ -3,15 +3,15 @@ interface CommonInfo {
   wins: number;
 }
 
-interface DriverStanding extends CommonInfo {
+export interface DriverStanding extends CommonInfo {
   driverId: string;
 }
 
-interface ConstructorStanding extends CommonInfo {
-  constructorId: string;
+export interface TeamStanding extends CommonInfo {
+  teamId: string;
 }
 
 export interface Standings {
-  driverStandings: DriverStanding[];
-  constructorStandings: ConstructorStanding[];
+  drivers: DriverStanding[];
+  teams: TeamStanding[];
 }

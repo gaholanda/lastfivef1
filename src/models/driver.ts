@@ -3,3 +3,7 @@ export interface Driver {
   team: string;
   number: number;
 }
+
+export interface Drivers {
+  [key: string]: Driver;
+}
