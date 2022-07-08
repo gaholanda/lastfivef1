@@ -1,3 +1,3 @@
 export { Header } from './Header';
-export { Races } from './Races';
+export { LastFiveRaces } from './LastFiveRaces';
 export { Standings } from './Standings';
