@@ -25,9 +25,9 @@ export function ChampionshipStandings() {
         <div>
           <h3>Drivers</h3>
           {driversTable.map((driver) => (
-            <div key={driver.driverId}>
+            <div key={driver.driver_id}>
               <p>
-                {drivers[driver.driverId].name}
+                {drivers[driver.driver_id].name}
                 <span>Points: {driver.points}</span>
                 <span>Wins: {driver.wins}</span>
               </p>
@@ -39,9 +39,9 @@ export function ChampionshipStandings() {
         <div>
           <h3>Teams</h3>
           {teamsTable.map((team) => (
-            <div key={team.teamId}>
+            <div key={team.team_id}>
               <p>
-                {teams[team.teamId].name}
+                {teams[team.team_id].name}
                 <span>Points: {team.points}</span>
                 <span>Wins: {team.wins}</span>
               </p>

@@ -4,11 +4,11 @@ interface CommonInfo {
 }
 
 export interface DriverStanding extends CommonInfo {
-  driverId: string;
+  driver_id: string;
 }
 
 export interface TeamStanding extends CommonInfo {
-  teamId: string;
+  team_id: string;
 }
 
 export interface Standings {
