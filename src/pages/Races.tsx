@@ -1,5 +1,9 @@
+import { LastFiveRaces } from "../components";
+
 export function Races() {
   return (
-    <div>Races</div>
+    <main>
+      <LastFiveRaces />
+    </main>
   )
 }

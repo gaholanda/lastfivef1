@@ -1,5 +1,10 @@
+import { Link } from "react-router-dom";
+import { ChampionshipStandings } from "../components";
+
 export function Home() {
   return (
-    <div>Home</div>
+    <main>
+      <ChampionshipStandings />
+    </main>
   )
 }

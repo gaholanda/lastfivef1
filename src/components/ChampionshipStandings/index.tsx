@@ -1,9 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../contexts/AppContext";
-import { DriverStanding, TeamStanding } from "../../models/standings";
+import { useRequest } from "../../hooks/useRequest";
+import { DriverStanding, Standings, TeamStanding } from "../../models/standings";
 
-export function Standings() {
-  const { standings, drivers, teams } = useContext(AppContext);
+export function ChampionshipStandings() {
+  const { drivers, teams } = useContext(AppContext);
+  const { data: standings = {} as Standings } = useRequest<Standings>("standings.json");
   const [driversTable, setDriversTable] = useState<DriverStanding[] | null>();
   const [teamsTable, setTeamsTable] = useState<TeamStanding[] | null>();
 
