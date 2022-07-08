@@ -3,7 +3,7 @@ import { AppContext } from "../../contexts/AppContext";
 import { useRequest } from "../../hooks/useRequest";
 import { DriverStanding, Standings, TeamStanding } from "../../models/standings";
 
-export function ChampionshipStandings() {
+export function Championship() {
   const { drivers, teams } = useContext(AppContext);
   const { data: standings = {} as Standings } = useRequest<Standings>("standings.json");
   const [driversTable, setDriversTable] = useState<DriverStanding[] | null>();
