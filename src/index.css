@@ -17,27 +17,27 @@
   box-sizing: border-box;
 }
 
-.alfa-romeo--text {
+.alfaromeo--text {
   color: var(--alfa-romeo);
 }
 
-.alfa-romeo--background {
+.alfaromeo--background {
   background-color: var(--alfa-romeo);
 }
 
-.alpha-tauri--text {
+.alphatauri--text {
   color: var(--alpha-tauri);
 }
 
-.alpha-tauri--background {
+.alphatauri--background {
   background-color: var(--alpha-tauri);
 }
 
-.aston-martin--text {
+.astonmartin--text {
   color: var(--aston-martin);
 }
 
-.aston-martin--background {
+.astonmartin--background {
   background-color: var(--aston-martin);
 }
 
@@ -81,11 +81,11 @@
   background-color: var(--mercedes);
 }
 
-.red-bull--text {
+.redbull--text {
   color: var(--red-bull);
 }
 
-.red-bull--background {
+.redbull--background {
   background-color: var(--red-bull);
 }
 

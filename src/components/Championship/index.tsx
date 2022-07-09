@@ -1,5 +1,4 @@
-import { useContext, useEffect, useState } from "react";
-import { AppContext } from "../../contexts/AppContext";
+import { useEffect, useState } from "react";
 import { useRequest } from "../../hooks/useRequest";
 import {
   DriverStanding,
@@ -7,11 +6,10 @@ import {
   TeamStanding,
 } from "../../models/standings";
 import { DriverInfo } from "./DriverInfo";
+import TeamInfo from "./TeamInfo";
 
 export function Championship() {
-  const { teams } = useContext(AppContext);
-  const { data: standings = {} as Standings } =
-    useRequest<Standings>("standings.json");
+  const { data: standings = {} as Standings } = useRequest<Standings>("standings.json");
   const [driversTable, setDriversTable] = useState<DriverStanding[] | null>();
   const [teamsTable, setTeamsTable] = useState<TeamStanding[] | null>();
 
@@ -27,7 +25,7 @@ export function Championship() {
   return (
     <>
       {driversTable && (
-        <div>
+        <div className="mt-3">
           <h3>Drivers</h3>
           <DriverInfo standing={driversTable[0]} type="heading" />
           <DriverInfo standing={driversTable[1]} type="heading" />
@@ -47,16 +45,10 @@ export function Championship() {
         </div>
       )}
       {teamsTable && (
-        <div>
+        <div className="mt-3">
           <h3>Teams</h3>
           {teamsTable.map((team) => (
-            <div key={team.team_id}>
-              <p>
-                {teams[team.team_id].name}
-                <span>Points: {team.points}</span>
-                <span>Wins: {team.wins}</span>
-              </p>
-            </div>
+            <TeamInfo key={team.team_id} standing={team} />
           ))}
         </div>
       )}
