@@ -1,11 +1,17 @@
 import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../contexts/AppContext";
 import { useRequest } from "../../hooks/useRequest";
-import { DriverStanding, Standings, TeamStanding } from "../../models/standings";
+import {
+  DriverStanding,
+  Standings,
+  TeamStanding,
+} from "../../models/standings";
+import { DriverInfo } from "./DriverInfo";
 
 export function Championship() {
-  const { drivers, teams } = useContext(AppContext);
-  const { data: standings = {} as Standings } = useRequest<Standings>("standings.json");
+  const { teams } = useContext(AppContext);
+  const { data: standings = {} as Standings } =
+    useRequest<Standings>("standings.json");
   const [driversTable, setDriversTable] = useState<DriverStanding[] | null>();
   const [teamsTable, setTeamsTable] = useState<TeamStanding[] | null>();
 
@@ -19,20 +25,25 @@ export function Championship() {
   }, [standings]);
 
   return (
-    <div>
-      <h3>Standings</h3>
+    <>
       {driversTable && (
         <div>
           <h3>Drivers</h3>
-          {driversTable.map((driver) => (
-            <div key={driver.driver_id}>
-              <p>
-                {drivers[driver.driver_id].name}
-                <span>Points: {driver.points}</span>
-                <span>Wins: {driver.wins}</span>
-              </p>
-            </div>
-          ))}
+          <DriverInfo standing={driversTable[0]} type="heading" />
+          <DriverInfo standing={driversTable[1]} type="heading" />
+          <DriverInfo standing={driversTable[2]} type="heading" />
+          <div className="mt-1">
+            {driversTable.map((standing, index) => {
+              if (index > 2)
+                return (
+                  <DriverInfo
+                    key={standing.driver_id}
+                    standing={standing}
+                    type="row"
+                  />
+                );
+            })}
+          </div>
         </div>
       )}
       {teamsTable && (
@@ -49,6 +60,6 @@ export function Championship() {
           ))}
         </div>
       )}
-    </div>
+    </>
   );
 }

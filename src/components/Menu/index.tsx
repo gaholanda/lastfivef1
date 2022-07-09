@@ -6,10 +6,10 @@ export function Menu() {
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb mb-0">
           <li className="breadcrumb-item">
-            <Link to="/">Home</Link>
+            <Link to="/races">Last Fives Races</Link>
           </li>
           <li className="breadcrumb-item">
-            <Link to="/races">Last Fives Races</Link>
+            <Link to="/standings">Standings</Link>
           </li>
         </ol>
       </nav>

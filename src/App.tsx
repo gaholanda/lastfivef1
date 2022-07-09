@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Header, Menu } from "./components";
-import { Home, Races } from "./pages";
+import { Standings, Races, Home } from "./pages";
 
 export function App() {
   return (
@@ -10,6 +10,7 @@ export function App() {
         <Menu />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/standings" element={<Standings />} />
           <Route path="/races" element={<Races />} />
         </Routes>
       </div>

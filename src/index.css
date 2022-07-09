@@ -1,5 +1,98 @@
+:root {
+  --alfa-romeo: #C92D4B;
+  --alpha-tauri: #5E8FAA;
+  --aston-martin: #358C75;
+  --alpine: #2293D1;
+  --ferrari: #F91536;
+  --haas: #B6BABD;
+  --mclaren: #F58020;
+  --mercedes: #6CD3BF;
+  --red-bull: #3671C6;
+  --williams: #37BEDD;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.alfa-romeo--text {
+  color: var(--alfa-romeo);
+}
+
+.alfa-romeo--background {
+  background-color: var(--alfa-romeo);
+}
+
+.alpha-tauri--text {
+  color: var(--alpha-tauri);
+}
+
+.alpha-tauri--background {
+  background-color: var(--alpha-tauri);
+}
+
+.aston-martin--text {
+  color: var(--aston-martin);
+}
+
+.aston-martin--background {
+  background-color: var(--aston-martin);
+}
+
+.alpine--text {
+  color: var(--alpine);
+}
+
+.alpine--background {
+  background-color: var(--alpine);
+}
+
+.ferrari--text {
+  color: var(--ferrari);
+}
+
+.ferrari--background {
+  background-color: var(--ferrari);
+}
+
+.haas--text {
+  color: var(--haas);
+}
+
+.haas--background {
+  background-color: var(--haas);
+}
+
+.mclaren--text {
+  color: var(--mclaren);
+}
+
+.mclaren--background {
+  background-color: var(--mclaren);
+}
+
+.mercedes--text {
+  color: var(--mercedes);
+}
+
+.mercedes--background {
+  background-color: var(--mercedes);
+}
+
+.red-bull--text {
+  color: var(--red-bull);
+}
+
+.red-bull--background {
+  background-color: var(--red-bull);
+}
+
+.williams--text {
+  color: var(--williams);
+}
+
+.williams--background {
+  background-color: var(--williams);
 }

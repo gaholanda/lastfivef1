@@ -1,9 +1,5 @@
-import { Championship } from "../components";
+import { Navigate } from "react-router-dom";
 
 export function Home() {
-  return (
-    <main>
-      <Championship />
-    </main>
-  )
+  return <Navigate to="/races" />
 }
