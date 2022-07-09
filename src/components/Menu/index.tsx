@@ -2,12 +2,16 @@ import { Link } from "react-router-dom";
 
 export function Menu() {
   return (
-    <menu>
-      <nav>
-        <Link to="/">Home</Link>
-      </nav>
-      <nav>
-        <Link to="/races">Races</Link>
+    <menu className="d-flex align-items-center py-3">
+      <nav aria-label="breadcrumb">
+        <ol className="breadcrumb mb-0">
+          <li className="breadcrumb-item">
+            <Link to="/">Home</Link>
+          </li>
+          <li className="breadcrumb-item">
+            <Link to="/races">Last Fives Races</Link>
+          </li>
+        </ol>
       </nav>
     </menu>
   );

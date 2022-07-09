@@ -6,11 +6,13 @@ export function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Menu />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/races" element={<Races />} />
-      </Routes>
+      <div className="container">
+        <Menu />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/races" element={<Races />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   );
 }

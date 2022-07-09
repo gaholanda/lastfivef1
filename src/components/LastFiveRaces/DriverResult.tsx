@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../../contexts/AppContext";
 import { DriverRacesResults } from "../../models";
 
@@ -8,10 +8,17 @@ interface ResultProps {
 
 export function DriverRaceResult({ driver }: ResultProps) {
   const { drivers, races } = useContext(AppContext);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    if (Object.keys(drivers).length > 0 && Object.keys(races).length > 0) {
+      setIsLoaded(true);
+    }
+  }, [drivers, races]);
 
   return (
     <>
-      {Array.isArray(driver.races_results) && (
+      {isLoaded && (
         <div>
           <p>{drivers[driver.driver_id].name}</p>
           <p>Total Points: {driver.total_points}</p>
