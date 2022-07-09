@@ -9,5 +9,6 @@ interface RaceResult {
 
 export interface DriverRacesResults {
   driver_id: string;
+  total_points: number;
   races_results: RaceResult[]
 }
