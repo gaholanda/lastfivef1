@@ -1,37 +1,20 @@
-import { useEffect, useState } from "react";
-import { useRequest } from "../../hooks/useRequest";
-import {
-  DriverStanding,
-  Standings,
-  TeamStanding,
-} from "../../models/standings";
+import { useStandings } from "../../hooks/useStandings";
 import { DriverInfo } from "./DriverInfo";
 import TeamInfo from "./TeamInfo";
 
 export function Championship() {
-  const { data: standings = {} as Standings } = useRequest<Standings>("standings.json");
-  const [driversTable, setDriversTable] = useState<DriverStanding[] | null>();
-  const [teamsTable, setTeamsTable] = useState<TeamStanding[] | null>();
-
-  useEffect(() => {
-    if (standings.drivers) {
-      setDriversTable(standings.drivers);
-    }
-    if (standings.teams) {
-      setTeamsTable(standings.teams);
-    }
-  }, [standings]);
+  const { standings } = useStandings();
 
   return (
     <>
-      {driversTable && (
-        <div className="mt-3">
+      {standings && (
+        <div>
           <h3>Drivers</h3>
-          <DriverInfo standing={driversTable[0]} type="heading" />
-          <DriverInfo standing={driversTable[1]} type="heading" />
-          <DriverInfo standing={driversTable[2]} type="heading" />
+          <DriverInfo standing={standings.drivers[0]} type="heading" />
+          <DriverInfo standing={standings.drivers[1]} type="heading" />
+          <DriverInfo standing={standings.drivers[2]} type="heading" />
           <div className="mt-1">
-            {driversTable.map((standing, index) => {
+            {standings.drivers.map((standing, index) => {
               if (index > 2)
                 return (
                   <DriverInfo
@@ -44,10 +27,10 @@ export function Championship() {
           </div>
         </div>
       )}
-      {teamsTable && (
+      {standings && (
         <div className="mt-3">
           <h3>Teams</h3>
-          {teamsTable.map((team) => (
+          {standings.teams.map((team) => (
             <TeamInfo key={team.team_id} standing={team} />
           ))}
         </div>

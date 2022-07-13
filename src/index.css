@@ -9,6 +9,14 @@
   --mercedes: #6CD3BF;
   --red-bull: #3671C6;
   --williams: #37BEDD;
+  --fastest-lap: #b114c9;
+  --pole: #FFD700;
+  --sprint: #0a58ca;
+  --first-place: #ffda6a;
+  --second-place: #ced4da;
+  --third-place: #fd7e14;
+  --points-place: #75b798;
+  --other-positions: #e35d6a;
 }
 
 * {
@@ -95,4 +103,40 @@
 
 .williams--background {
   background-color: var(--williams);
+}
+
+.fastest-lap {
+  background-color: var(--fastest-lap);
+}
+
+.pole--background {
+  background-color: var(--pole);
+}
+
+.pole--text {
+  color: var(--pole);
+}
+
+.sprint {
+  background-color: var(--sprint);
+}
+
+.first-place--text {
+  color: var(--first-place);
+}
+
+.second-place--text {
+  color: var(--second-place);
+}
+
+.third-place--text {
+  color: var(--third-place);
+}
+
+.points-place--text {
+  color: var(--points-place);
+}
+
+.other-positions--text {
+  color: var(--other-positions);
 }

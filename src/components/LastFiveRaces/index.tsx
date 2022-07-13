@@ -1,18 +1,16 @@
-import { useRequest } from "../../hooks/useRequest";
-import { DriverRacesResults } from "../../models";
-import { DriverRaceResult } from "./DriverResult";
+import { useLastFiveRaces } from "../../hooks/useLastFiveRaces";
+import { RacesResults } from "./RacesResults";
 
 export function LastFiveRaces() {
-  const { data: racesResults } = useRequest<DriverRacesResults[]>("last-five-races.json");
+ const { driverRaces } = useLastFiveRaces();
 
   return (
-    <main>
-      <h3>Last Five Races</h3>
-      {racesResults &&
-        Array.isArray(racesResults) &&
-        racesResults.sort((a, b) => b.total_points - a.total_points).map((driver) => (
-          <DriverRaceResult key={driver.driver_id} driver={driver} />
+    <>
+      {driverRaces &&
+        Array.isArray(driverRaces) &&
+        driverRaces.map((driver) => (
+          <RacesResults key={driver.driver_id} result={driver} />
         ))}
-    </main>
+    </>
   );
 }
