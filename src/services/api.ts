@@ -1,30 +1,10 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://gaholanda.github.io/lasfivef1/",
+  baseURL: "https://gaholanda.github.io/lastfivef1/",
 });
 
-export const GetDrivers = async () => {
-  const { data } = await api.get("/drivers.json");
-  return data;
-};
-
-export const GetConstructors = async () => {
-  const { data } = await api.get("/constructors.json");
-  return data;
-};
-
-export const GetStandings = async () => {
-  const { data } = await api.get("/standings.json");
-  return data;
-};
-
-export const GetRaces = async () => {
-  const { data } = await api.get("/races.json");
-  return data;
-};
-
-export const GetLastFiveRaces = async () => {
-  const { data } = await api.get("/last-five-races.json");
+export const GetRequest = async (url: string) => {
+  const { data } = await api.get(url);
   return data;
 };

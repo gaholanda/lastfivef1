@@ -1,3 +1,5 @@
 export { Header } from './Header';
-export { Races } from './Races';
-export { Standings } from './Standings';
+export { Menu } from './Menu';
+export { LastFiveRaces } from './LastFiveRaces';
+export { Championship } from './Championship';
+export { Badge } from './Badge';
