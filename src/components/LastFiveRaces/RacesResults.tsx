@@ -9,7 +9,7 @@ interface RaceResultsProps {
 }
 
 export function RacesResults({ result }: RaceResultsProps) {
-  const { drivers, races, points } = useContext(AppContext);
+  const { drivers, races } = useContext(AppContext);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
